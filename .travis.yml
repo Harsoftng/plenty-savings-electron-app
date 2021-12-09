@@ -1,0 +1,21 @@
+osx_image: xcode13
+sudo: false
+language: node_js
+node_js: '14'
+env:
+  - ELECTRON-CACHE: $HOME/.electron
+matrix:
+  include:
+    - os: osx
+cache:
+  directories:
+    - node_modules
+    - "$HOME/Library/Caches/electron"
+    - "$HOME/Library/Caches/electron-builder"
+install:
+  - npm install
+script:
+  - npm run dist
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
