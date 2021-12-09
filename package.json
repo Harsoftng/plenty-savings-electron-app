@@ -14,10 +14,10 @@
       {
         "provider": "github",
         "repo": "plenty-savings-electron-app",
-        "owner": "harsoftng",
+        "owner": "Harsoftng",
         "protocol": "https",
         "vPrefixedTagName": true,
-        "token": "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",
+        "token": "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",
         "private": true
       }
     ],
