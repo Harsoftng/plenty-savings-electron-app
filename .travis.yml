@@ -15,7 +15,7 @@ cache:
 install:
   - npm install
 script:
-  - npm run dist
+  - npm run publish:windows
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
