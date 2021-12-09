@@ -14,8 +14,9 @@
       {
         "provider": "github",
         "repo": "",
-        "owner": "harsoftng",
-      }],
+        "owner": "harsoftng"
+      }
+    ],
     "mac": {
       "target": [
         "dmg",
