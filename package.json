@@ -13,7 +13,7 @@
     "publish": [
       {
         "provider": "github",
-        "repo": "",
+        "repo": "plenty-savings-electron-app",
         "owner": "harsoftng"
       }
     ],
