@@ -17,8 +17,8 @@
         "owner": "Harsoftng",
         "protocol": "https",
         "vPrefixedTagName": true,
-        "token": "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",
-        "private": true
+        "private": true,
+        "publishAutoUpdate": true
       }
     ],
     "mac": {
@@ -35,9 +35,7 @@
     },
     "win": {
       "target": [
-        "nsis",
-        "zip",
-        "portable"
+        "nsis"
       ],
       "icon": "resources/favicon.ico"
     },
@@ -51,10 +49,11 @@
     }
   },
   "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "pack": "electron-builder --mac --win --dir",
+    "dist": "electron-builder --mac --win",
     "publish": "electron-builder --publish always",
     "publish:windows": "electron-builder --win --publish always",
+    "publish:all": "electron-builder --mac --win --publish always",
     "postinstall": "install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
