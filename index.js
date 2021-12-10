@@ -72,42 +72,17 @@ const configureAutoUpdate = () => {
   //setup auto updater
   autoUpdater.on('checking-for-update', () => {
     console.log({ updater: 'checking for updates........' });
-    // dialog.showMessageBox({
-    //   title: 'Checkin Updates',
-    //   message: 'checking for updates........'
-    // });
   });
 
   autoUpdater.on('update-available', (info) => {
     console.log({
       updater: `Updates available Version: ${info.version}, Released Date: ${info.releaseDate}`
     });
-
-    // dialog
-    //   .showMessageBox({
-    //     type: 'info',
-    //     title: 'Found Updates',
-    //     message: 'Found updates, do you want update now?',
-    //     buttons: ['Sure', 'No']
-    //   })
-    //   .then((buttonIndex) => {
-    //     if (buttonIndex === 0) {
     autoUpdater.downloadUpdate();
-    //   } else {
-    //     // updater.enabled = true;
-    //     // updater = null;
-    //   }
-    // });
   });
 
   autoUpdater.on('update-not-available', () => {
     console.log({ updater: `Updates are not available at this time ......` });
-    // dialog.showMessageBox({
-    //   title: 'No Updates',
-    //   message: 'Current version is up-to-date.'
-    // });
-    // updater.enabled = true;
-    // updater = null;
   });
 
   autoUpdater.on('download-progress', (progress) => {
@@ -118,16 +93,7 @@ const configureAutoUpdate = () => {
 
   autoUpdater.on('update-downloaded', (info) => {
     console.log({ updater: `Download successful ${info}` });
-    // updater.enabled = true;
-    // dialog
-    //   .showMessageBox({
-    //     title: 'Install Updates',
-    //     message:
-    //       'Updates downloaded, application will now quit for updates to install...'
-    //   })
-    //   .then(() => {
-    setImmediate(() => autoUpdater.quitAndInstall());
-    // });
+    autoUpdater.quitAndInstall();
   });
 
   autoUpdater.on('error', (info) => {
